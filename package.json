@@ -1,0 +1,24 @@
+{
+  "name": "bahalu",
+  "version": "0.0.0",
+  "description": "Immutable container implementations to support functional programming patterns in JavaScript.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "exit 0;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudaraka/bahalu.git"
+  },
+  "keywords": [
+    "container",
+    "functor",
+    "functional"
+  ],
+  "author": "Sudaraka Wijesinghe <sudaraka@sudaraka.org> (https://sudaraka.org/)",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/sudaraka/bahalu/issues"
+  },
+  "homepage": "https://github.com/sudaraka/bahalu#readme"
+}

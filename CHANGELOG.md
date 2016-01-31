@@ -13,4 +13,5 @@ details.
 
 ## [Unreleased]
 ### Added
+- `npm` support (a.k.a package.json)
 - README, LICENSE and CHANGELOG
