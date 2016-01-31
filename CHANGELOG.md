@@ -13,5 +13,6 @@ details.
 
 ## [Unreleased]
 ### Added
+- `babel` to transpile ES2015 code
 - `npm` support (a.k.a package.json)
 - README, LICENSE and CHANGELOG
