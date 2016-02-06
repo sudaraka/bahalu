@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "pretest": "eslint src/**",
-    "test": "exit 0;"
+    "test": "mocha --compilers js:babel-register --check-leaks --bail --reporter dot --growl --recursive"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "@sudaraka/eslint-config-default": "^0.3.0",
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
-    "eslint": "^1.10.3"
+    "eslint": "^1.10.3",
+    "expect": "^1.14.0",
+    "mocha": "^2.4.5"
   }
 }

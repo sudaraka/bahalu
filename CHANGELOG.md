@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `mocha` based test support
 - `eslint` support
 - `babel` to transpile ES2015 code
 - `npm` support (a.k.a package.json)
