@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `Left` container for the `Either` pattern
 - `deep-freeze-strict` to make the contained value immutable.
 - `Right` container for the `Either` pattern
 - `mocha` based test support
