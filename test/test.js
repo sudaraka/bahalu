@@ -24,4 +24,18 @@ describe('Basic Container', () => {
     });
   });
 
+  it('map() method should return a container', () => {
+    const
+      container_a = container(42),
+      container_b = container_a.map(val => {
+        return val + 1;
+      });
+
+    is_functor(container_b);
+
+    container_b.map(val => {
+      expect(val).toBe(43);
+    });
+  });
+
 });
