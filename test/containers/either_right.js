@@ -58,4 +58,25 @@ describe('Either.right Container', () => {
 
   });
 
+  describe('Immutability', () => {
+
+    it('should not mutate the original container', () => {
+      const
+        container_a = right({ 'answer': 42 });
+
+      container_a.map(val => {
+        expect(() => {
+          val.answer += 1;
+        }).toThrow(TypeError);
+
+        return val;
+      });
+
+      container_a.map(val => {
+        expect(val.answer).toBe(42);
+      });
+    });
+
+  });
+
 });

@@ -10,6 +10,8 @@
  *
  */
 
+import deepFreeze from 'deep-freeze-strict';
+
 const
   // right :: a -> Right(a)
   // Implements the "Right of a" pattern.
@@ -22,7 +24,9 @@ const
     const
       // Prototype for the container object exposed to outside.
       Right = newValue => {
-        _value = deepFreeze(newValue);
+        if('undefined' !== typeof newValue) {
+          _value = deepFreeze(newValue);
+        }
       };
 
     // map :: (a) -> Right(f(a))
