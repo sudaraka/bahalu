@@ -11,11 +11,17 @@
  */
 
 import expect from 'expect';
+import { is_functor } from './helpers';
+import { container } from '../src';
 
-describe('First test', () => {
+describe('Basic Container', () => {
 
-  it('is 1 = 1 ?', () => {
-    expect(1).toEqual(1);
+  is_functor(container);
+
+  it('map() method should receive contained value', () => {
+    container(42).map(val => {
+      expect(val).toBe(42);
+    });
   });
 
 });
