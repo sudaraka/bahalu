@@ -27,6 +27,12 @@ describe('Bahalu Module', () => {
       expect(containers.right().constructor.name).toBe('Right');
     });
 
+    it('should include "left" container', () => {
+      expect(Object.keys(containers)).toInclude('left');
+      expect(containers.left).toBeAn(Function);
+      expect(containers.left().constructor.name).toBe('Left');
+    });
+
   });
 
 });
