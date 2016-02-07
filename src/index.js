@@ -10,6 +10,24 @@
  *
  */
 
-const Container = {};
+const
+  container = (() => {
+    let
+      _value = null;
 
-export { Container };
+    const
+      Container = value => {
+        _value = value;
+      };
+
+    Container.prototype.map = f => {
+      return container(f(_value));
+    };
+
+    return value => {
+      return new Container(value);
+    };
+
+  })();
+
+export { container };
