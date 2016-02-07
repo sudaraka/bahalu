@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `Right` container for the `Either` pattern
 - `mocha` based test support
 - `eslint` support
 - `babel` to transpile ES2015 code

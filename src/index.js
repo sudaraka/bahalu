@@ -10,24 +10,4 @@
  *
  */
 
-const
-  container = (() => {
-    let
-      _value = null;
-
-    const
-      Container = value => {
-        _value = value;
-      };
-
-    Container.prototype.map = f => {
-      return container(f(_value));
-    };
-
-    return value => {
-      return new Container(value);
-    };
-
-  })();
-
-export { container };
+export { right } from './containers/either';
