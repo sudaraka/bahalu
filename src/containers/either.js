@@ -11,8 +11,9 @@
  */
 
 const
-  // Right container implementation
-  right = (() => {
+  // right :: a -> Right(a)
+  // Implements the "Right of a" pattern.
+  right = value => {
     let
       // Contained value is kept in a JavaScript closure to avoid direct access
       // to it from outside.
@@ -20,8 +21,8 @@ const
 
     const
       // Prototype for the container object exposed to outside.
-      Right = value => {
-        _value = value;
+      Right = newValue => {
+        _value = deepFreeze(newValue);
       };
 
     // map :: (a) -> Right(f(a))
@@ -35,12 +36,7 @@ const
       return right(f(_value));
     };
 
-    // right :: a -> Right(a)
-    // Implements the "Right of a" pattern.
-    return value => {
-      return new Right(value);
-    };
-
-  })();
+    return new Right(value);
+  };
 
 export { right };
