@@ -18,24 +18,28 @@ describe('Basic Container', () => {
 
   is_functor(container);
 
-  it('map() method should receive contained value', () => {
-    container(42).map(val => {
-      expect(val).toBe(42);
-    });
-  });
+  describe('map() method', () => {
 
-  it('map() method should return a container', () => {
-    const
-      container_a = container(42),
-      container_b = container_a.map(val => {
-        return val + 1;
+    it('should receive contained value', () => {
+      container(42).map(val => {
+        expect(val).toBe(42);
       });
-
-    is_functor(container_b);
-
-    container_b.map(val => {
-      expect(val).toBe(43);
     });
+
+    it('should return a container', () => {
+      const
+        container_a = container(42),
+        container_b = container_a.map(val => {
+          return val + 1;
+        });
+
+      is_functor(container_b);
+
+      container_b.map(val => {
+        expect(val).toBe(43);
+      });
+    });
+
   });
 
 });

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "pretest": "eslint src/**",
-    "test": "mocha --compilers js:babel-register --check-leaks --bail --reporter dot --growl --recursive"
+    "test": "mocha --compilers js:babel-register --check-leaks --bail --growl --recursive"
   },
   "repository": {
     "type": "git",
