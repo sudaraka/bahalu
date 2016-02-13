@@ -3,14 +3,14 @@
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
- * This program comes with ABSOLUTELY NO WARRANTY;
+ * This program comes with ABSOLUTELY NO WARRANTY
  * This is free software, and you are welcome to redistribute it and/or modify
  * it under the terms of the BSD 2-clause License. See the LICENSE file for more
  * details.
  *
  */
 
-import expect from 'expect';
+import expect from 'expect'
 
 const
 
@@ -21,13 +21,13 @@ const
   is_functor = container => {
 
     it('should be an object', () => {
-      expect(container()).toBeAn(Object);
-    });
+      expect(container()).toBeAn(Object)
+    })
 
     it('should have a map() method', () => {
-      expect(container().map).toBeAn(Function);
-    });
+      expect(container().map).toBeAn(Function)
+    })
 
-  };
+  }
 
-export { is_functor };
+export { is_functor }
