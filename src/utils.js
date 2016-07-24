@@ -13,8 +13,8 @@
 export const
   freeze = obj => {
     const
-      thingsToFreeze = ['object', 'function'],
-      fpropsNotToFreeze = ['caller', 'callee', 'arguments'],
+      thingsToFreeze = [ 'object', 'function' ],
+      fpropsNotToFreeze = [ 'caller', 'callee', 'arguments' ],
       isFunction = 'function' === typeof obj
 
     if(
@@ -28,9 +28,7 @@ export const
       && thingsToFreeze.includes(typeof obj)
     ) {
       Reflect.ownKeys(obj)
-        .filter(prop => {
-          return isFunction ? !fpropsNotToFreeze.includes(prop) : true
-        })
+        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))
         .forEach(prop => freeze(obj[prop]))
 
       return Object.freeze(obj)
