@@ -1,5 +1,7 @@
 # Bahalu
 
+**WORK IN PROGRESS** - not suitable for production use.
+
 Immutable container implementations to support functional programming patterns
 in JavaScript.
 
