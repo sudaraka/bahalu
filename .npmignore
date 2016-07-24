@@ -2,3 +2,4 @@ src/
 test/
 .*
 *.tgz
+webpack.config.babel.js

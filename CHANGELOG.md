@@ -14,6 +14,7 @@ details.
 ## [Unreleased]
 ### Added
 - Built-in utility function to deep freeze objects.
+- `webpack` to build distributable code.
 
 ### Removed
 - `deep-freeze-strict` dependency.
