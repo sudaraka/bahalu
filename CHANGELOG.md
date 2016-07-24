@@ -11,6 +11,13 @@ details.
 
 ---
 
+## [Unreleased]
+### Added
+- Built-in utility function to deep freeze objects.
+
+### Removed
+- `deep-freeze-strict` dependency.
+
 ## [0.0.1] - 206-07-24
 ### Added
 - `Left` container for the `Either` pattern

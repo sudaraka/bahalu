@@ -10,7 +10,7 @@
  *
  */
 
-import deepFreeze from 'deep-freeze-strict'
+import { freeze } from '../utils'
 
 const
   // right :: a -> Right(a)
@@ -25,7 +25,7 @@ const
       // Prototype for the container object exposed to outside.
       Right = newValue => {
         if('undefined' !== typeof newValue) {
-          _value = deepFreeze(newValue)
+          _value = freeze(newValue)
         }
       }
 
@@ -55,7 +55,7 @@ const
       // Prototype for the container object exposed to outside.
       Left = newValue => {
         if('undefined' !== typeof newValue) {
-          _value = deepFreeze(newValue)
+          _value = freeze(newValue)
         }
       }
 
