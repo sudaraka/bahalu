@@ -11,7 +11,7 @@ details.
 
 ---
 
-## [Unreleased]
+## [0.0.1] - 206-07-24
 ### Added
 - `Left` container for the `Either` pattern
 - `deep-freeze-strict` to make the contained value immutable.
