@@ -16,6 +16,9 @@ details.
 - Built-in utility function to deep freeze objects.
 - `webpack` to build distributable code.
 
+### Changed
+- Moved test files in to `src/` directory with `*_spec.js` naming convention.
+
 ### Removed
 - `deep-freeze-strict` dependency.
 

@@ -1,5 +1,5 @@
 /**
- * test/test.js: sample test spec
+ * src/index_spec.js: tests for the main module
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -11,7 +11,7 @@
  */
 
 import expect from 'expect'
-import * as containers from '../src'
+import * as containers from './index'
 
 describe('Bahalu Module', () => {
 
