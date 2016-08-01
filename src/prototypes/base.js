@@ -1,5 +1,5 @@
 /**
- * src/containers/prototype.js: Primary prototype for all containers
+ * src/prototypes/base.js: Primary prototype for all containers
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *

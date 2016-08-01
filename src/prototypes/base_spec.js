@@ -1,5 +1,5 @@
 /**
- * src/containers/prototype_spec.js: tests for container prototype
+ * src/prototypes/base_spec.js: tests for container prototype
  *
  * Copyleft 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -11,39 +11,39 @@
  */
 
 import expect from 'expect'
-import containerPrototype from './prototype'
+import basePrototype from './base'
 
 describe('Container Prototype', () => {
 
   it('should be an object', () => {
     expect(
-      typeof containerPrototype
+      typeof basePrototype
     ).toBe('object')
   })
 
   it('should no be mutable', () => {
     expect(
       () => {
-        containerPrototype.newThing = 0
+        basePrototype.newThing = 0
       }
     ).toThrow(TypeError)
   })
 
   it('should have isContainer property', () => {
     expect(
-      Reflect.ownKeys(containerPrototype).includes('isContainer')
+      Reflect.ownKeys(basePrototype).includes('isContainer')
     ).toBe(true)
   })
 
   it('should not mutate isContainer property', () => {
     expect(
       () => {
-        containerPrototype.isContainer = false
+        basePrototype.isContainer = false
       }
     ).toThrow(TypeError)
 
     expect(
-      Reflect.deleteProperty(containerPrototype, 'isContainer')
+      Reflect.deleteProperty(basePrototype, 'isContainer')
     ).toBe(false)
   })
 
