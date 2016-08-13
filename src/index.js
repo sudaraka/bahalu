@@ -10,4 +10,4 @@
  *
  */
 
-export { right, left } from './containers/either'
+export {}

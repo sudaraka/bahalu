@@ -19,20 +19,4 @@ describe('Bahalu Module', () => {
     expect(containers).toBeAn(Object)
   })
 
-  describe('Either pattern Containers', () => {
-
-    it('should include "right" container', () => {
-      expect(Object.keys(containers)).toInclude('right')
-      expect(containers.right).toBeAn(Function)
-      expect(containers.right().constructor.name).toBe('Right')
-    })
-
-    it('should include "left" container', () => {
-      expect(Object.keys(containers)).toInclude('left')
-      expect(containers.left).toBeAn(Function)
-      expect(containers.left().constructor.name).toBe('Left')
-    })
-
-  })
-
 })
