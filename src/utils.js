@@ -10,8 +10,6 @@
  *
  */
 
-import expect from 'expect'
-
 export const
   // Recursively freeze the given object
   freeze = obj => {
@@ -38,20 +36,4 @@ export const
     }
 
     return obj
-  },
-
-  // Container must be a functor satisfying following conditions:
-  //   - Is and Object
-  //   - Containing map() method.
-  //
-  is_functor = container => {
-
-    it('should be an object', () => {
-      expect(container()).toBeAn(Object)
-    })
-
-    it('should have a map() method', () => {
-      expect(container().map).toBeAn(Function)
-    })
-
   }
