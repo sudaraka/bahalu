@@ -17,33 +17,33 @@ describe('Container Prototype', () => {
 
   it('should be an object', () => {
     expect(
-      typeof basePrototype
+      typeof basePrototype()
     ).toBe('object')
   })
 
   it('should no be mutable', () => {
     expect(
       () => {
-        basePrototype.newThing = 0
+        basePrototype().newThing = 0
       }
     ).toThrow(TypeError)
   })
 
   it('should have isContainer property', () => {
     expect(
-      Reflect.ownKeys(basePrototype).includes('isContainer')
+      Reflect.ownKeys(basePrototype()).includes('isContainer')
     ).toBe(true)
   })
 
   it('should not mutate isContainer property', () => {
     expect(
       () => {
-        basePrototype.isContainer = false
+        basePrototype().isContainer = false
       }
     ).toThrow(TypeError)
 
     expect(
-      Reflect.deleteProperty(basePrototype, 'isContainer')
+      Reflect.deleteProperty(basePrototype(), 'isContainer')
     ).toBe(false)
   })
 

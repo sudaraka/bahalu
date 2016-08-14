@@ -12,4 +12,4 @@
 
 import { freeze } from '../utils'
 
-export default freeze({ 'isContainer': true })
+export default () => freeze({ 'isContainer': true })
