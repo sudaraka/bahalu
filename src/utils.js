@@ -13,10 +13,11 @@
 import expect from 'expect'
 
 export const
+  // Recursively freeze the given object
   freeze = obj => {
     const
       thingsToFreeze = [ 'object', 'function' ],
-      fpropsNotToFreeze = [ 'caller', 'callee', 'arguments' ],
+      fpropsNotToFreeze = [ 'caller', 'callee', 'arguments', 'prototype' ],
       isFunction = 'function' === typeof obj
 
     if(
@@ -30,7 +31,7 @@ export const
       && thingsToFreeze.includes(typeof obj)
     ) {
       Reflect.ownKeys(obj)
-        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))
+        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))  // Not prop of function or prop of a function that is not excluded explicitly
         .forEach(prop => freeze(obj[prop]))
 
       return Object.freeze(obj)
