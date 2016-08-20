@@ -36,4 +36,16 @@ export const
     }
 
     return obj
+  },
+
+  // Merge given objects and return the frozen result
+  extendPrototype = (props, proto) => {
+    const
+      objProps = Object.keys(props)
+        .reduce((obj, key) => ({
+          ...obj,
+          [key]: { 'value': props[key] }
+        }), {})
+
+    return freeze(Object.create(proto(), objProps))
   }
