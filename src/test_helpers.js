@@ -13,18 +13,43 @@
 import expect from 'expect'
 
 export const
-  // Container must be a functor satisfying following conditions:
-  //   - Is and Object
-  //   - Containing map() method.
-  //
-  is_functor = container => {
+  // Tests if given (prototype) object confirms to functor definition
+  isFunctor = proto => {
 
-    it('should be an object', () => {
-      expect(container()).toBeAn(Object)
-    })
+    describe('Is functor ?', () => {
 
-    it('should have a map() method', () => {
-      expect(container().map).toBeAn(Function)
+      it('should be an object', () => {
+        expect(proto).toBeAn(Object)
+      })
+
+      it('should have isFunctor property', () => {
+        expect(
+          Reflect.ownKeys(proto).includes('isFunctor')
+        ).toBe(true)
+      })
+
+      it('should not mutate isFunctor property', () => {
+        expect(
+          () => {
+            proto.isFunctor = false
+          }
+        ).toThrow(TypeError)
+
+        expect(
+          Reflect.deleteProperty(proto, 'isFunctor')
+        ).toBe(false)
+      })
+
+      it('should have a map() function', () => {
+        expect(proto.map).toBeAn(Function)
+      })
+
+      it('should not be able to mutate map() function', () => {
+        expect(() => {
+          proto.map = () => 42
+        }).toThrow(TypeError)
+      })
+
     })
 
   }

@@ -1,5 +1,5 @@
 /**
- * src/prototypes/base_spec.js: tests for container prototype
+ * src/prototypes/base_spec.js: tests for base container prototype
  *
  * Copyleft 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -13,7 +13,7 @@
 import expect from 'expect'
 import basePrototype from './base'
 
-describe('Container Prototype', () => {
+describe('Prototype: Base', () => {
 
   it('should be an object', () => {
     expect(
