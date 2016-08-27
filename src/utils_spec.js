@@ -62,30 +62,6 @@ describe('Utilities', () => {
       expect(Reflect.getPrototypeOf(obj)).toNotEqual(proto2())
     })
 
-    it('should return object with immutable prototype', () => {
-      const
-        proto = () => ({ 'prototype_field': 42 }),
-        obj = extendPrototype({}, proto)
-
-      expect(
-        () => {
-          obj.prototype_field = 0
-        }
-      ).toThrow(TypeError)
-    })
-
-    it('should return immutable object', () => {
-      const
-        prop = { 'property_field': 42 },
-        obj = extendPrototype(prop, () => ({}))
-
-      expect(
-        () => {
-          obj.property_field = 0
-        }
-      ).toThrow(TypeError)
-    })
-
   })
 
 })

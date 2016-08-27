@@ -47,5 +47,5 @@ export const
           [key]: { 'value': props[key] }
         }), {})
 
-    return freeze(Object.create(proto(), objProps))
+    return Object.create(proto(), objProps)
   }

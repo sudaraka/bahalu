@@ -28,26 +28,8 @@ export const
         ).toBe(true)
       })
 
-      it('should not mutate isFunctor property', () => {
-        expect(
-          () => {
-            proto.isFunctor = false
-          }
-        ).toThrow(TypeError)
-
-        expect(
-          Reflect.deleteProperty(proto, 'isFunctor')
-        ).toBe(false)
-      })
-
       it('should have a map() function', () => {
         expect(proto.map).toBeAn(Function)
-      })
-
-      it('should not be able to mutate map() function', () => {
-        expect(() => {
-          proto.map = () => 42
-        }).toThrow(TypeError)
       })
 
     })
