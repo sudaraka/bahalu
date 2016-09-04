@@ -39,7 +39,7 @@ export const
   },
 
   // Merge given objects and return the frozen result
-  extendPrototype = (props, proto) => {
+  extendMorphism = (props, proto) => {
     const
       objProps = Object.keys(props)
         .reduce((obj, key) => ({

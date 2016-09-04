@@ -11,7 +11,7 @@
  */
 
 import expect from 'expect'
-import { freeze, extendPrototype } from './utils'
+import { freeze, extendMorphism } from './utils'
 
 describe('Utilities', () => {
 
@@ -50,13 +50,13 @@ describe('Utilities', () => {
   })
 
 
-  describe('extendPrototype()', () => {
+  describe('extendMorphism()', () => {
 
     it('should attach correct prototype', () => {
       const
         proto1 = () => ({ 'prototype_field': 42 }),
         proto2 = () => ({ 'prototype_field': 43 }),
-        obj = extendPrototype({}, proto1)
+        obj = extendMorphism({}, proto1)
 
       expect(Reflect.getPrototypeOf(obj)).toEqual(proto1())
       expect(Reflect.getPrototypeOf(obj)).toNotEqual(proto2())

@@ -13,23 +13,23 @@
 import expect from 'expect'
 
 export const
-  // Tests if given (prototype) object confirms to functor definition
-  isFunctor = proto => {
+  // Tests if given (morphism) object confirms to functor definition
+  isFunctor = morphism => {
 
     describe('Is functor ?', () => {
 
       it('should be an object', () => {
-        expect(proto).toBeAn(Object)
+        expect(morphism).toBeAn(Object)
       })
 
       it('should have isFunctor property', () => {
         expect(
-          Reflect.ownKeys(proto).includes('isFunctor')
+          Reflect.ownKeys(morphism).includes('isFunctor')
         ).toBe(true)
       })
 
       it('should have a map() function', () => {
-        expect(proto.map).toBeAn(Function)
+        expect(morphism.map).toBeAn(Function)
       })
 
     })

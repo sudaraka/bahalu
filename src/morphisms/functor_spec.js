@@ -1,5 +1,5 @@
 /**
- * src/prototypes/functor_spec.js: tests for functor prototype
+ * src/morphisms/functor_spec.js: tests for functor morphism
  *
  * Copyleft 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -11,22 +11,22 @@
  */
 
 import expect from 'expect'
-import functorPrototype from './functor'
-import basePrototype from './base'
+import functorMorphism from './functor'
+import baseMorphism from './base'
 
 import { isFunctor } from '../test_helpers'
 
-describe('Prototype: Functor', () => {
+describe('Morphism: Functor', () => {
 
   it('should be a function', () => {
-    expect(functorPrototype).toBeA(Function)
+    expect(functorMorphism).toBeA(Function)
   })
 
-  it('should have container prototype', () => {
-    expect(Reflect.getPrototypeOf(functorPrototype())).toEqual(basePrototype())
-    expect(functorPrototype().isContainer).toBe(true)
+  it('should extend base container morphism', () => {
+    expect(Reflect.getPrototypeOf(functorMorphism())).toEqual(baseMorphism())
+    expect(functorMorphism().isContainer).toBe(true)
   })
 
-  isFunctor(functorPrototype())
+  isFunctor(functorMorphism())
 
 })

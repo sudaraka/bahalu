@@ -1,5 +1,5 @@
 /**
- * src/prototypes/base_spec.js: tests for base container prototype
+ * src/morphisms/base_spec.js: tests for base container morphism
  *
  * Copyleft 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -11,19 +11,19 @@
  */
 
 import expect from 'expect'
-import basePrototype from './base'
+import baseMorphism from './base'
 
-describe('Prototype: Base', () => {
+describe('Morphism: Base', () => {
 
   it('should be an object', () => {
     expect(
-      typeof basePrototype()
+      typeof baseMorphism()
     ).toBe('object')
   })
 
   it('should have isContainer property', () => {
     expect(
-      Reflect.ownKeys(basePrototype()).includes('isContainer')
+      Reflect.ownKeys(baseMorphism()).includes('isContainer')
     ).toBe(true)
   })
 

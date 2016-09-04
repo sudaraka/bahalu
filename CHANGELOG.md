@@ -19,6 +19,7 @@ details.
 - `webpack` to build distributable code.
 
 ### Changed
+- Switch naming convention from `prototype` to `morphism`.
 - Moved test files in to `src/` directory with `*_spec.js` naming convention.
 
 ### Removed

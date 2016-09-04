@@ -1,5 +1,5 @@
 /**
- * src/prototypes/base.js: Primary prototype for all containers
+ * src/morphisms/base.js: base for all container morphisms
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *

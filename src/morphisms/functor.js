@@ -1,5 +1,5 @@
 /**
- * src/prototypes/functor.js: prototype for basic functor
+ * src/morphisms/functor.js: morphism for basic functor
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -10,14 +10,14 @@
  *
  */
 
-import { extendPrototype } from '../utils'
-import basePrototype from './base'
+import { extendMorphism } from '../utils'
+import baseMorphism from './base'
 
-export default (value, wrapper) => extendPrototype(
+export default (value, wrapper) => extendMorphism(
   {
     'isFunctor': true,
     'map': (f, ...args) => wrapper(f(value, ...args))
   },
 
-  basePrototype
+  baseMorphism
 )
