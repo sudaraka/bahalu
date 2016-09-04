@@ -24,7 +24,7 @@ export const
 
       it('should have isFunctor property', () => {
         expect(
-          Reflect.ownKeys(morphism).includes('isFunctor')
+          Reflect.has(morphism, 'isFunctor')
         ).toBe(true)
       })
 
