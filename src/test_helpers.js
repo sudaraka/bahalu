@@ -28,4 +28,23 @@ export const
     it('should have a map() function', () => {
       expect(morphism.map).toBeAn(Function)
     })
+  },
+
+  // Tests if given (morphism) object confirms to monad definition
+  isMonad = morphism => {
+    describe('Is functor ?', () => {
+      isFunctor(morphism)
+    })
+
+    it('should have isMonad property', () => {
+      expect(
+        Reflect.has(morphism, 'isMonad')
+      ).toBe(true)
+    });
+
+    [ 'bind', 'chain', 'flatMap', 'fmap' ].forEach(prop => {
+      it(`should have a ${prop}() function/alias`, () => {
+        expect(morphism[prop]).toBeAn(Function)
+      })
+    })
   }
