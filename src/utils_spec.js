@@ -56,7 +56,7 @@ describe('Utilities', () => {
       const
         proto1 = () => ({ 'prototype_field': 42 }),
         proto2 = () => ({ 'prototype_field': 43 }),
-        obj = extendMorphism({}, proto1)
+        obj = extendMorphism({}, proto1())
 
       expect(Reflect.getPrototypeOf(obj)).toEqual(proto1())
       expect(Reflect.getPrototypeOf(obj)).toNotEqual(proto2())

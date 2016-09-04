@@ -19,5 +19,5 @@ export default (value, wrapper) => extendMorphism(
     'map': (f, ...args) => wrapper(f(value, ...args))
   },
 
-  baseMorphism
+  baseMorphism()
 )
