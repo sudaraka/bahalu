@@ -15,23 +15,17 @@ import expect from 'expect'
 export const
   // Tests if given (morphism) object confirms to functor definition
   isFunctor = morphism => {
-
-    describe('Is functor ?', () => {
-
-      it('should be an object', () => {
-        expect(morphism).toBeAn(Object)
-      })
-
-      it('should have isFunctor property', () => {
-        expect(
-          Reflect.has(morphism, 'isFunctor')
-        ).toBe(true)
-      })
-
-      it('should have a map() function', () => {
-        expect(morphism.map).toBeAn(Function)
-      })
-
+    it('should be an object', () => {
+      expect(morphism).toBeAn(Object)
     })
 
+    it('should have isFunctor property', () => {
+      expect(
+        Reflect.has(morphism, 'isFunctor')
+      ).toBe(true)
+    })
+
+    it('should have a map() function', () => {
+      expect(morphism.map).toBeAn(Function)
+    })
   }
