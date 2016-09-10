@@ -29,7 +29,8 @@ export const
       && thingsToFreeze.includes(typeof obj)
     ) {
       Reflect.ownKeys(obj)
-        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))  // Not prop of function or prop of a function that is not excluded explicitly
+        // Not prop of function or prop of a function that is not excluded explicitly
+        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))
         .forEach(prop => freeze(obj[prop]))
 
       return Object.freeze(obj)
