@@ -16,7 +16,6 @@ import { morphismFactory } from './base'
 
 export default (value, wrapper) => {
   const
-    functor = functorMorphism(value, wrapper),
     // Using default wrapper (identity) here is same as using no wrapper.
     // See implementation of morphismFactory
     bind = morphismFactory({ value })
@@ -30,6 +29,6 @@ export default (value, wrapper) => {
       'fmap': bind
     },
 
-    functor
+    functorMorphism(value, wrapper)
   )
 }
