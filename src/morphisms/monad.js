@@ -23,7 +23,10 @@ export default (value, wrapper) => {
   return extendMorphism(
     {
       'isMonad': true,
+
       bind,
+
+      // 3 common aliases of `bind`
       'chain': bind,
       'flatMap': bind,
       'fmap': bind
