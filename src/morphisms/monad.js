@@ -12,11 +12,14 @@
 
 import { extendMorphism } from '../utils'
 import functorMorphism from './functor'
+import { morphismFactory } from './base'
 
 export default (value, wrapper) => {
   const
     functor = functorMorphism(value, wrapper),
-    bind = (f, ...args) => f(value, ...args)
+    // Using default wrapper (identity) here is same as using no wrapper.
+    // See implementation of morphismFactory
+    bind = morphismFactory({ value })
 
   return extendMorphism(
     {

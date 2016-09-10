@@ -10,4 +10,11 @@
  *
  */
 
+const
+  identity = _ => _
+
 export default () => ({ 'isContainer': true })
+
+export const  // eslint-disable-line one-var
+  morphismFactory = ({ wrapper = identity, value }) =>
+    (f, ...args) => wrapper(f(value, ...args))

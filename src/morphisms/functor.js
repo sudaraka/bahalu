@@ -11,12 +11,15 @@
  */
 
 import { extendMorphism } from '../utils'
-import baseMorphism from './base'
+import baseMorphism, { morphismFactory } from './base'
 
 export default (value, wrapper) => extendMorphism(
   {
     'isFunctor': true,
-    'map': (f, ...args) => wrapper(f(value, ...args))
+    'map': morphismFactory({
+      wrapper,
+      value
+    })
   },
 
   baseMorphism()
