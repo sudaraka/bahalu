@@ -10,7 +10,7 @@
  *
  */
 
-import expect from 'expect'
+import expect from 'expect.js'
 import baseMorphism from './base'
 
 describe('Morphism: Base', () => {
@@ -18,13 +18,13 @@ describe('Morphism: Base', () => {
   it('should be an object', () => {
     expect(
       typeof baseMorphism()
-    ).toBe('object')
+    ).to.be('object')
   })
 
   it('should have isContainer property', () => {
     expect(
       Reflect.ownKeys(baseMorphism()).includes('isContainer')
-    ).toBe(true)
+    ).to.be(true)
   })
 
 })

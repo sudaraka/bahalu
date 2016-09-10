@@ -10,23 +10,23 @@
  *
  */
 
-import expect from 'expect'
+import expect from 'expect.js'
 
 export const
   // Tests if given (morphism) object confirms to functor definition
   isFunctor = morphism => {
     it('should be an object', () => {
-      expect(morphism).toBeAn(Object)
+      expect(morphism).to.be.an(Object)
     })
 
     it('should have isFunctor property', () => {
       expect(
         Reflect.has(morphism, 'isFunctor')
-      ).toBe(true)
+      ).to.be(true)
     })
 
     it('should have a map() function', () => {
-      expect(morphism.map).toBeAn(Function)
+      expect(morphism.map).to.be.a(Function)
     })
   },
 
@@ -39,12 +39,12 @@ export const
     it('should have isMonad property', () => {
       expect(
         Reflect.has(morphism, 'isMonad')
-      ).toBe(true)
+      ).to.be(true)
     });
 
     [ 'bind', 'chain', 'flatMap', 'fmap' ].forEach(prop => {
       it(`should have a ${prop}() function/alias`, () => {
-        expect(morphism[prop]).toBeAn(Function)
+        expect(morphism[prop]).to.be.a(Function)
       })
     })
   }

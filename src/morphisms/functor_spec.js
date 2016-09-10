@@ -10,7 +10,7 @@
  *
  */
 
-import expect from 'expect'
+import expect from 'expect.js'
 import functorMorphism from './functor'
 import baseMorphism from './base'
 
@@ -19,12 +19,12 @@ import { isFunctor } from '../test_helpers'
 describe('Morphism: Functor', () => {
 
   it('should be a function', () => {
-    expect(functorMorphism).toBeA(Function)
+    expect(functorMorphism).to.be.a(Function)
   })
 
   it('should extend base container morphism', () => {
-    expect(Reflect.getPrototypeOf(functorMorphism())).toEqual(baseMorphism())
-    expect(functorMorphism().isContainer).toBe(true)
+    expect(Reflect.getPrototypeOf(functorMorphism())).to.eql(baseMorphism())
+    expect(functorMorphism().isContainer).to.be(true)
   })
 
   isFunctor(functorMorphism())
