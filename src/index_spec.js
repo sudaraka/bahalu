@@ -10,13 +10,13 @@
  *
  */
 
-import expect from 'expect.js'
+import expect from 'expect'
 import * as containers from './index'
 
 describe('Bahalu Module', () => {
 
   it('should be an Object', () => {
-    expect(containers).to.be.an(Object)
+    expect(containers).toBeAn(Object)
   })
 
 })

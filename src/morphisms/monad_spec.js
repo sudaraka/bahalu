@@ -10,7 +10,7 @@
  *
  */
 
-import expect from 'expect.js'
+import expect from 'expect'
 import monadMorphism from './monad'
 
 import { isMonad } from '../test_helpers'
@@ -18,7 +18,7 @@ import { isMonad } from '../test_helpers'
 describe('Morphism: Monad', () => {
 
   it('should be a function', () => {
-    expect(monadMorphism).to.be.a(Function)
+    expect(monadMorphism).toBeA(Function)
   })
 
   isMonad(monadMorphism())

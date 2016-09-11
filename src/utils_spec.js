@@ -10,7 +10,7 @@
  *
  */
 
-import expect from 'expect.js'
+import expect from 'expect'
 import { freeze, extendMorphism } from './utils'
 
 describe('Utilities', () => {
@@ -21,14 +21,14 @@ describe('Utilities', () => {
       const
         obj = freeze({})
 
-      expect(Object.isFrozen(obj)).to.be(true)
+      expect(Object.isFrozen(obj)).toBe(true)
     })
 
     it('should freeze object property (value)', () => {
       const
         obj = freeze({ 'prop': 42 })
 
-      expect(Object.isFrozen(obj.prop)).to.be(true)
+      expect(Object.isFrozen(obj.prop)).toBe(true)
     })
 
     it('should freeze object nested object', () => {
@@ -36,15 +36,15 @@ describe('Utilities', () => {
         obj1 = freeze({ 'prop': {} }),
         obj2 = freeze({ 'prop1': { 'prop2': {} } })
 
-      expect(Object.isFrozen(obj1.prop)).to.be(true)
-      expect(Object.isFrozen(obj2.prop1.prop2)).to.be(true)
+      expect(Object.isFrozen(obj1.prop)).toBe(true)
+      expect(Object.isFrozen(obj2.prop1.prop2)).toBe(true)
     })
 
     it('should freeze object method', () => {
       const
         obj = freeze({ 'func': () => 42 })
 
-      expect(Object.isFrozen(obj.func)).to.be(true)
+      expect(Object.isFrozen(obj.func)).toBe(true)
     })
 
   })
@@ -58,8 +58,8 @@ describe('Utilities', () => {
         proto2 = () => ({ 'prototype_field': 43 }),
         obj = extendMorphism({}, proto1())
 
-      expect(Reflect.getPrototypeOf(obj)).to.eql(proto1())
-      expect(Reflect.getPrototypeOf(obj)).to.not.eql(proto2())
+      expect(Reflect.getPrototypeOf(obj)).toEqual(proto1())
+      expect(Reflect.getPrototypeOf(obj)).toNotEqual(proto2())
     })
 
   })
