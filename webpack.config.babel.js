@@ -26,7 +26,9 @@ export default {
     // Paths here are relative to current directory
     'path': join(__dirname, 'dist'),
 
-    'filename': '[name].js'
+    'filename': '[name].js',
+
+    'libraryTarget': 'commonjs2'
   },
 
   'module': {
