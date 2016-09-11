@@ -15,6 +15,7 @@ import { DefinePlugin, optimize } from 'webpack'
 
 export default {
   'context': join(__dirname, 'src'),
+  'devtools': false,
 
   'entry': {
     // Paths here are relative to `context` of this configuration
@@ -46,8 +47,9 @@ export default {
     new optimize.OccurenceOrderPlugin(),
     new optimize.DedupePlugin(),
     new optimize.UglifyJsPlugin({
-      'minimize': true,
-      'compressor': { 'warnings': false }
+      'compress': { 'warnings': false },
+      'output': { 'comments': false },
+      'sourceMap': false
     })
   ]
 }
