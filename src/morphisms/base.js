@@ -11,12 +11,25 @@
  */
 
 const
+  // identity : a -> a
+  // function that always return the given value
   identity = _ => _,
+
+  // never : ? -> false
+  // function that always return boolean false
   never = () => false
 
 export default () => ({ 'isContainer': true })
 
 export const  // eslint-disable-line one-var
+  // morphismFactory :
+  // params: object containing value, wrapper and divert
+  //
+  //   - value   : container value that is closed in the generated morphism.
+  //   - wrapper : container that is exposed to the public.
+  //   - divert  : function returning the boolean decision of weather or not to
+  //               apply the given function.
+  //
   morphismFactory = ({ wrapper = identity, divert = never, value }) =>
     (f, ...args) => {
       if(divert(value)) {
