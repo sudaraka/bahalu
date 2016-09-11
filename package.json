@@ -9,7 +9,7 @@
     "build": "webpack",
     "prepublish": "npm run build",
     "pretest": "eslint src/**",
-    "test": "mocha --compilers js:babel-register --check-leaks --bail --recursive src/{,**/}*_spec.js"
+    "test": "mocha --compilers js:babel-register --check-leaks --bail --recursive 'src/**/*_spec.js'"
   },
   "repository": {
     "type": "git",
