@@ -19,4 +19,8 @@ describe('Bahalu Module', () => {
     expect(containers).toBeAn(Object)
   })
 
+  it('should have container property', () => {
+    expect(containers.container).toBeA(Function)
+  })
+
 })

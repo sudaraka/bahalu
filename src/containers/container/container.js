@@ -1,5 +1,5 @@
 /**
- * src/index.js: main module for "bahalu" package
+ * src/containers/container.js: basic container
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -10,6 +10,12 @@
  *
  */
 
-import container from './containers/container'
+import monad from '../../morphisms/monad'
 
-export { container }
+const
+  container = value => monad(value, container)
+
+container.of = value => container(value)
+
+export default container
+
