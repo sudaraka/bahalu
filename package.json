@@ -1,7 +1,7 @@
 {
   "name": "bahalu",
   "version": "0.0.1",
-  "description": "Immutable container implementations to support functional programming patterns in JavaScript.",
+  "description": "Monadic container implementations to support functional programming patterns in JavaScript.",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -fr dist/ *.tgz",

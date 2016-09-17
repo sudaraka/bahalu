@@ -25,6 +25,7 @@ details.
 
 ### Removed
 - `deep-freeze-strict` dependency.
+- Drop content and action immutability from the definition.
 
 ## [0.0.1] - 206-07-24
 ### Added

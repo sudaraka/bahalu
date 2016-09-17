@@ -2,8 +2,8 @@
 
 **WORK IN PROGRESS** - not suitable for production use.
 
-Immutable container (monad) implementations to support functional programming
-patterns in JavaScript.
+Monadic container implementations to support functional programming patterns in
+JavaScript.
 
 ## Meaning of the name
 
