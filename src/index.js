@@ -11,5 +11,6 @@
  */
 
 import container from './containers/container'
+import maybe from './containers/maybe'
 
-export { container }
+export { container, maybe }

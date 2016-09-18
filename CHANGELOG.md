@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `maybe` container.
 - basic `container`.
 - Functionality to generate and extend container prototypes.
 - Stage 2 preset for `babel`.
