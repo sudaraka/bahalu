@@ -11,34 +11,6 @@
  */
 
 export const
-  // Recursively freeze the given object
-  freeze = obj => {
-    const
-      thingsToFreeze = [ 'object', 'function' ],
-      fpropsNotToFreeze = [ 'caller', 'callee', 'arguments', 'prototype' ],
-      isFunction = 'function' === typeof obj
-
-    if(
-      // No need to freeze if already frozen
-      !Object.isFrozen(obj)
-
-      // No need to freeze a `null`
-      && null !== obj
-
-      // Check if we need to freeze this type of things
-      && thingsToFreeze.includes(typeof obj)
-    ) {
-      Reflect.ownKeys(obj)
-        // Not prop of function or prop of a function that is not excluded explicitly
-        .filter(prop => !isFunction || !fpropsNotToFreeze.includes(prop))
-        .forEach(prop => freeze(obj[prop]))
-
-      return Object.freeze(obj)
-    }
-
-    return obj
-  },
-
   // Merge given objects and return the frozen result
   extendMorphism = (props, proto) => {
     const

@@ -11,44 +11,9 @@
  */
 
 import expect from 'expect'
-import { freeze, extendMorphism } from './utils'
+import { extendMorphism } from './utils'
 
 describe('Utilities', () => {
-
-  describe('freeze()', () => {
-
-    it('should freeze simple object', () => {
-      const
-        obj = freeze({})
-
-      expect(Object.isFrozen(obj)).toBe(true)
-    })
-
-    it('should freeze object property (value)', () => {
-      const
-        obj = freeze({ 'prop': 42 })
-
-      expect(Object.isFrozen(obj.prop)).toBe(true)
-    })
-
-    it('should freeze object nested object', () => {
-      const
-        obj1 = freeze({ 'prop': {} }),
-        obj2 = freeze({ 'prop1': { 'prop2': {} } })
-
-      expect(Object.isFrozen(obj1.prop)).toBe(true)
-      expect(Object.isFrozen(obj2.prop1.prop2)).toBe(true)
-    })
-
-    it('should freeze object method', () => {
-      const
-        obj = freeze({ 'func': () => 42 })
-
-      expect(Object.isFrozen(obj.func)).toBe(true)
-    })
-
-  })
-
 
   describe('extendMorphism()', () => {
 

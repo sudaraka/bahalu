@@ -25,8 +25,9 @@ details.
 - Moved test files in to `src/` directory with `*_spec.js` naming convention.
 
 ### Removed
-- `deep-freeze-strict` dependency.
+- Unused local implementation to freeze objects.
 - Drop content and action immutability from the definition.
+- `deep-freeze-strict` dependency.
 
 ## [0.0.1] - 206-07-24
 ### Added
