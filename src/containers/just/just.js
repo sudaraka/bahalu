@@ -1,5 +1,5 @@
 /**
- * src/index.js: main module for "bahalu" package
+ * src/containers/just.js: just container
  *
  * Copyright 2016 Sudaraka Wijesinghe <sudaraka@sudaraka.org>
  *
@@ -10,8 +10,16 @@
  *
  */
 
-import container from './containers/container'
-import maybe from './containers/maybe'
-import just from './containers/just'
+import monad from '../../morphisms/monad'
 
-export { container, maybe, just }
+const
+  // always : ? -> true
+  // function that always return boolean true
+  always = () => true,
+
+  just = value => monad(value, just, always)
+
+just.of = value => just(value)
+
+export default just
+

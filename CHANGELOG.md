@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `just` container.
 - `maybe` container.
 - basic `container`.
 - Functionality to generate and extend container prototypes.
