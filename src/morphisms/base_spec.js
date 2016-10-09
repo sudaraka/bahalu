@@ -57,6 +57,79 @@ describe('Morphism: Base', () => {
       expect(spy).toHaveBeenCalled()
     })
 
+    it('should call given wrapper function when diverting', () => {
+      const
+        divert = () => true,
+        spyTarget = { 'wrapper': _ => _ },
+        spy = expect.spyOn(spyTarget, 'wrapper')
+
+      morphismFactory({
+        'wrapper': spyTarget.wrapper,
+        divert
+      })(_ => _)
+
+      expect(spy).toHaveBeenCalled()
+    })
+
+    it('should not call given divertedWrapper function when not diverting', () => {
+      const
+        divert = () => false,
+        spyTarget = {
+          'wrapper': _ => _,
+          'divertedWrapper': _ => _
+        },
+        spyWrapper = expect.spyOn(spyTarget, 'wrapper'),
+        spyDivertedWrapper = expect.spyOn(spyTarget, 'divertedWrapper')
+
+      morphismFactory({
+        'wrapper': spyTarget.wrapper,
+        'divertedWrapper': spyTarget.divertedWrapper,
+        divert
+      })(_ => _)
+
+      expect(spyWrapper).toHaveBeenCalled()
+      expect(spyDivertedWrapper).toNotHaveBeenCalled()
+    })
+
+    it('should call given wrapper function when divertedWrapper is not specified', () => {
+      const
+        divert = () => true,
+        spyTarget = {
+          'wrapper': _ => _,
+          'divertedWrapper': _ => _
+        },
+        spyWrapper = expect.spyOn(spyTarget, 'wrapper'),
+        spyDivertedWrapper = expect.spyOn(spyTarget, 'divertedWrapper')
+
+      morphismFactory({
+        'wrapper': spyTarget.wrapper,
+        divert
+      })(_ => _)
+
+      expect(spyWrapper).toHaveBeenCalled()
+      expect(spyDivertedWrapper).toNotHaveBeenCalled()
+    })
+
+    it('should call given divertedWrapper function when diverting', () => {
+      const
+        divert = () => true,
+        spyTarget = {
+          'wrapper': _ => _,
+          'divertedWrapper': _ => _
+        },
+        spyWrapper = expect.spyOn(spyTarget, 'wrapper'),
+        spyDivertedWrapper = expect.spyOn(spyTarget, 'divertedWrapper')
+
+      morphismFactory({
+        'wrapper': spyTarget.wrapper,
+        'divertedWrapper': spyTarget.divertedWrapper,
+        divert
+      })(_ => _)
+
+      expect(spyWrapper).toNotHaveBeenCalled()
+      expect(spyDivertedWrapper).toHaveBeenCalled()
+    })
+
     it('should call given function when divert return false', () => {
       const
         divert = () => false,

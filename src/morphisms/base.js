@@ -25,16 +25,23 @@ export const  // eslint-disable-line one-var
   // morphismFactory :
   // params: object containing value, wrapper and divert
   //
-  //   - value   : container value that is closed in the generated morphism.
-  //   - wrapper : container that is exposed to the public.
-  //   - divert  : function returning the boolean decision of weather or not to
-  //               apply the given function.
+  //   - value           : container value that is closed in the generated
+  //                       morphism.
+  //   - wrapper         : container that is exposed to the public.
+  //   - divert          : function returning the boolean decision of weather or
+  //                       not to apply the given function.
+  //   - divertedWrapper : optional wrapper to be used when diverting the flow.
   //
-  morphismFactory = ({ wrapper = identity, divert = never, value }) =>
-    (f, ...args) => {
+  morphismFactory = ({ wrapper = identity, divert = never, divertedWrapper, value }) => {
+    if('function' !== typeof divertedWrapper) {
+      divertedWrapper = wrapper
+    }
+
+    return (f, ...args) => {
       if(divert(value)) {
-        return wrapper(value)
+        return divertedWrapper(value)
       }
 
       return wrapper(f(value, ...args) || null)
     }
+  }

@@ -13,12 +13,13 @@
 import { extendMorphism } from '../utils'
 import baseMorphism, { morphismFactory } from './base'
 
-export default (value, wrapper, divert) => extendMorphism(
+export default (value, wrapper, divert, divertedWrapper) => extendMorphism(
   {
     'isFunctor': true,
     'map': morphismFactory({
       divert,
       wrapper,
+      divertedWrapper,
       value
     })
   },
