@@ -16,9 +16,9 @@ import just from '../just'
 const
   isNothing = value => null === value || 'undefined' === typeof value,
 
-  either = lowContainer => {
+  either = otherContainer => {
     const
-      inner = divert => value => monad(value, inner(divert), divert, lowContainer())
+      inner = divert => value => monad(value, inner(divert), divert, otherContainer())
 
     inner.of = (value, divert = isNothing) => inner(divert)(value)
 
