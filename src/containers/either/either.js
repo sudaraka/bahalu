@@ -18,7 +18,7 @@ const
 
   either = lowContainer => {
     const
-      inner = divert => value => monad(value, inner(divert), divert, lowContainer)
+      inner = divert => value => monad(value, inner(divert), divert, lowContainer())
 
     inner.of = (value, divert = isNothing) => inner(divert)(value)
 

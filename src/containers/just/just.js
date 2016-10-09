@@ -17,9 +17,9 @@ const
   // function that always return boolean true
   always = () => true,
 
-  just = value => monad(value, just, always)
+  just = () => value => monad(value, just(), always)
 
-just.of = value => just(value)
+just.of = value => just()(value)
 
 export default just
 

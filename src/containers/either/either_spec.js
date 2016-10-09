@@ -88,7 +88,7 @@ describe('Container: either', () => {
 
   it('should be able to use a custom diverted container', () => {
     const
-      customContainer = () => monad('FIXED VALUE', customContainer)
+      customContainer = () => () => monad('FIXED VALUE', customContainer)
 
     // Without NULL map
     expect(

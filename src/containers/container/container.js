@@ -13,9 +13,9 @@
 import monad from '../../morphisms/monad'
 
 const
-  container = value => monad(value, container)
+  container = () => value => monad(value, container())
 
-container.of = value => container(value)
+container.of = value => container()(value)
 
 export default container
 
