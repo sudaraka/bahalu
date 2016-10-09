@@ -13,6 +13,7 @@ details.
 
 ## [Unreleased]
 ### Added
+- `either` container.
 - `just` container.
 - `maybe` container.
 - basic `container`.
